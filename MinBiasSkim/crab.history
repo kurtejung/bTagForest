@@ -1,0 +1,28 @@
+130122_131821: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -create
+130122_131919: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -create
+130122_131936: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -create
+130122_132029: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -create
+130122_135958: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -submit
+130122_140423: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -status
+130122_140740: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -status
+130122_142406: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -status
+130122_145435: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -status
+130122_154607: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -create -submit
+130122_155544: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -status
+130122_161123: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -status
+130122_161747: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -publish 1-123
+130122_162556: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -create -submit -publish
+130122_163115: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -status
+130122_165745: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -status
+130122_172946: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -status
+130122_174515: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -publish
+130122_175147: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -postMortem 36
+130122_175231: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -status
+130122_175340: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -publish
+130122_175347: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -getoutput
+130122_175410: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -publish
+130122_175451: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_4_patch3/python/crab.py -publish
+130129_234701: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_5/python/crab.py -status
+130129_234715: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_5/python/crab.py -publish
+130129_234744: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_5/python/crab.py -publish
+130129_235516: /afs/cern.ch/cms/ccs/wm/scripts/Crab/CRAB_2_8_5/python/crab.py -checkPublication -USER.dataset_to_check=/PAMinBiasUPC/kjung-HiSkimPA2013_Run210534-5235c5e41a3918cdfad0a30e8a20d02f-hiZeroBiasSingleTrack/USER -USER.dbs_url_for_publication=https://cmsdbsprod.cern.ch:8443/cms_dbs_ph_analysis_01_writer/servlet/DBSServlet -debug
