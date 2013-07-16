@@ -16,7 +16,7 @@ ivars.register ('secFiles',
 
 ivars.randomNumber = 1
 
-ivars.inputFiles = "/store/data/Run2013A/PPJet/RECO/PromptReco-v1/000/211/752/00000/64287D36-C476-E211-BE07-BCAEC5329701.root"
+ivars.inputFiles = "file:/afs/cern.ch/work/k/kjung/EADD935E-D595-E211-AF23-848F69FD2943.root"
 ivars.outputFile = 'hiForestTreeMC.root'
 
 ivars.parseArguments()
@@ -63,7 +63,7 @@ process.source = cms.Source("PoolSource",
 
 # Number of events we want to process, -1 = all events
 process.maxEvents = cms.untracked.PSet(
-            input = cms.untracked.int32(20))
+            input = cms.untracked.int32(200))
 
 
 #####################################################################################
@@ -188,10 +188,10 @@ process.ppTrack.qualityStrings = cms.untracked.vstring('highPurity','highPurityS
 process.ppTrack.trackPtMin = 0.1
 process.ppTrack.simTrackPtMin = 0.09
 process.ppTrack.doSimVertex = False
-process.ppTrack.doSimTrack = False
-process.ppTrack.fillSimTrack = False
+process.ppTrack.doSimTrack = True
+process.ppTrack.fillSimTrack = True
 process.pixelTrack = process.ppTrack.clone(trackSrc = cms.InputTag("pixelTracks"),
-                                           fillSimTrack = False
+                                           fillSimTrack = True
                                            )
 
 # Muons 

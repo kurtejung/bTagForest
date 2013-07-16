@@ -166,12 +166,14 @@ process.pixelTrack = process.ppTrack.clone(trackSrc = cms.InputTag("pixelTracks"
 process.load("MuTrig.HLTMuTree.hltMuTree_cfi")
 process.muonTree = process.hltMuTree.clone()
 process.muonTree.doGen = cms.untracked.bool(True)
+process.muonTree.doCentrality = cms.untracked.bool(False) #turn off for pp
 
 # Event tree
 process.load("CmsHi/HiHLTAlgos.hievtanalyzer_cfi")
 process.hiEvtAnalyzer.doMC = cms.bool(False)
 process.hiEvtAnalyzer.doEvtPlane = cms.bool(True)
-process.hiEvtAnalyzer.Centrality = cms.InputTag("pACentrality") 
+process.hiEvtAnalyzer.doCentrality = cms.bool(False)
+#process.hiEvtAnalyzer.Centrality = cms.InputTag("pACentrality") 
  
 
 process.iterativeConePu5CaloJets.srcPVs = vtxTag

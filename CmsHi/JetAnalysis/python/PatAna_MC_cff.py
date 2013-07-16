@@ -24,13 +24,12 @@ patJets.addDiscriminators   = True
 patJets.addAssociatedTracks = True
 patJets.addJetCharge        = False
 patJets.addJetID            = True
-patJets.getJetMCFlavour     = False #true for MC
-patJets.addGenPartonMatch   = False #true for MC
-patJets.addGenJetMatch      = False #true for MC
-patJets.embedGenJetMatch    = False
-patJets.embedGenPartonMatch = False
+patJets.getJetMCFlavour     = True #true for MC - fills refparton_flavorForB
+patJets.addGenPartonMatch   = True #true for MC - fills refparton_flavor
+patJets.addGenJetMatch      = True #true for MC
+patJets.embedGenJetMatch    = True
+patJets.embedGenPartonMatch = True
 patJets.embedCaloTowers	    = False
-
 
 patJetCorrFactors.useNPV = False
 # full reco

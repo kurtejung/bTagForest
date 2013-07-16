@@ -38,6 +38,7 @@ HLTMuTree::HLTMuTree(const edm::ParameterSet& iConfig)
   tagVtx = iConfig.getParameter<edm::InputTag>("vertices");
   doReco = iConfig.getUntrackedParameter<bool>("doReco");
   doGen = iConfig.getUntrackedParameter<bool>("doGen");
+  doCentrality = iConfig,getUntrackedParameter<bool>("doCentrality");
   tagGenPtl = iConfig.getParameter<edm::InputTag>("genparticle");
   tagSimTrk = iConfig.getParameter<edm::InputTag>("simtrack");
   // tagCompVtx = iConfig.getParameter<edm::InputTag>("
@@ -233,12 +234,15 @@ HLTMuTree::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 
   //Loop over reco::muon
   if (doReco) {
-    //Put centrality information
-    centrality = new CentralityProvider(iSetup);
-    centrality->newEvent(iEvent,iSetup);
-    cbin = centrality->getBin();
-//    cbin = -1;
-
+    if(doCentrality){
+      //Put centrality information
+      centrality = new CentralityProvider(iSetup);
+      centrality->newEvent(iEvent,iSetup);
+      cbin = centrality->getBin();
+    }
+    else{
+    	cbin = -1;
+    }
     //Get vertex position
     edm::Handle< vector<reco::Vertex> > vertex;
     iEvent.getByLabel(tagVtx,vertex);

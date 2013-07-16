@@ -5,6 +5,10 @@ makeHeavyIonPhotons.remove(photonMatch)
 
 patPhotons.addGenMatch = False
 
+patJets.getJetMCFlavour     = False #true for MC
+patJets.addGenPartonMatch   = False #true for MC
+patJets.addGenJetMatch      = False #true for MC
+
 
 icPu5patJets.addGenJetMatch = False
 icPu5patJets.addGenPartonMatch = False
