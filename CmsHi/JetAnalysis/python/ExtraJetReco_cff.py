@@ -224,7 +224,7 @@ recoAk2to5ID = cms.Sequence(
                            )
 #prevent bloating - reduce number of jet collections
 recoFastJets = cms.Sequence(ak3PFJets05+ak3PFJets1+ak3PFJets2+ak5PFJets05+ak5PFJets1+ak5PFJets2)
-recoBTag = cms.Sequence(akPu3PFJets * akPu5PFJets * akPu3CaloJets * akPu5CaloJets)
+recoBTag = cms.Sequence(akPu3PFJets * akPu5PFJets * akPu3CaloJets * akPu5CaloJets * ak3PFJets * ak5PFJets)
 recoBTagID = cms.Sequence(akPu3CaloJetID * akPu5CaloJetID)
 
 #recoFastJets = cms.Sequence(ak1PFJets05+ak2PFJets05+ak3PFJets05+ak4PFJets05+ak5PFJets05+ak6PFJets05

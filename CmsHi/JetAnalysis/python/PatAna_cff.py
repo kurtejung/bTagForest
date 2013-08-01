@@ -105,6 +105,16 @@ akPu5PFpatSequence_withBtagging.remove(akPu5PFmatch)
 akPu5PFpatSequence_withBtagging.remove(akPu5PFparton)
 akPu5PFpatSequence_withBtagging.remove(akPu5PFPatJetFlavourId)
 
+ak3PFpatSequence_withBtagging.remove(ak3clean)
+ak3PFpatSequence_withBtagging.remove(ak3PFmatch)
+ak3PFpatSequence_withBtagging.remove(ak3PFparton)
+ak3PFpatSequence_withBtagging.remove(ak3PFPatJetFlavourId)
+
+ak5PFpatSequence_withBtagging.remove(ak5clean)
+ak5PFpatSequence_withBtagging.remove(ak5PFmatch)
+ak5PFpatSequence_withBtagging.remove(ak5PFparton)
+ak5PFpatSequence_withBtagging.remove(ak5PFPatJetFlavourId)
+
 icPu5patSequence.remove(icPu5clean)
 icPu5patSequence.remove(icPu5match)
 icPu5patSequence.remove(icPu5parton)

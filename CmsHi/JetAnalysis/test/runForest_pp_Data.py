@@ -41,8 +41,8 @@ process.HiForest.inputLines = cms.vstring("HiForest V2 for pPb",
 process.source = cms.Source("PoolSource",
                             duplicateCheckMode = cms.untracked.string("noDuplicateCheck"),
 #                            fileNames = cms.untracked.vstring("/store/group/phys_heavyions/icali/PAPhysics/pAPilotRun_Run202792GoodLumis_RAWRECO_L1Em_PrescaleActiveBitsSkimNoZB_CMSSW528_V94_FinalWorkflow_2MHz_v2_v1_v2/f3394926c5028783289fd2cd57b36909/PAPhysics_RAWRECO_inRECO_9_1_8mR.root")
-                            fileNames = cms.untracked.vstring("/store/data/Run2013A/PPJet/RECO/PromptReco-v1/000/211/752/00000/64287D36-C476-E211-BE07-BCAEC5329701.root"),
-			    eventsToProcess = cms.untracked.VEventRange('211752:52544990-211752:52546000')
+                            fileNames = cms.untracked.vstring("/store/data/Run2013A/PPJet/RECO/PromptReco-v1/000/211/752/00000/64287D36-C476-E211-BE07-BCAEC5329701.root")
+#			    eventsToProcess = cms.untracked.VEventRange('211752:52544990-211752:52546000')
 #                            fileNames = cms.untracked.vstring("file:/afs/cern.ch/user/y/yjlee/public/pPbDijet.root")
 			    )
 
@@ -217,6 +217,8 @@ process.hiSelectedTrackQuality.src = cms.InputTag(trkTag)
 process.hiTrackReco = cms.Sequence(process.hiTracks)
 process.hiTrackDebug = cms.Sequence(process.hiSelectedTrackQuality)
 
+## Adding a metric crap-ton of btaggers for all jet algorithms
+## Kurt Jung - Aug 1, 2013
 process.PFTowers.src = cms.InputTag("particleFlow")
 #process.akPu1PFJetAnalyzer.pfCandidateLabel = cms.untracked.InputTag("particleFlow")
 #process.akPu2PFJetAnalyzer.pfCandidateLabel = cms.untracked.InputTag("particleFlow")
@@ -250,6 +252,58 @@ process.akPu5PFJetAnalyzer.CombinedSecondaryVertexNegativeBJetTags = cms.untrack
 process.akPu5PFJetAnalyzer.CombinedSecondaryVertexPositiveBJetTags = cms.untracked.string("akPu5PFCombinedSecondaryVertexPositiveBJetTags");
 process.akPu5PFJetAnalyzer.NegativeSoftMuonByPtBJetTags = cms.untracked.string("akPu5PFNegativeSoftMuonByPtBJetTags");
 process.akPu5PFJetAnalyzer.PositiveSoftMuonByPtBJetTags = cms.untracked.string("akPu5PFPositiveSoftMuonByPtBJetTags");
+
+process.ak5PFJetAnalyzer.pfCandidateLabel = cms.untracked.InputTag("particleFlow")
+process.ak5PFJetAnalyzer.useMatch = cms.untracked.bool(False)
+process.ak5PFJetAnalyzer.doLifeTimeTagging = cms.untracked.bool(True)
+process.ak5PFJetAnalyzer.ImpactParameterTagInfos = cms.untracked.string("ak5PFImpactParameterTagInfos");
+process.ak5PFJetAnalyzer.TrackCountingHighEffBJetTags = cms.untracked.string("ak5PFTrackCountingHighEffBJetTags");
+process.ak5PFJetAnalyzer.NegativeTrackCountingHighEffJetTags = cms.untracked.string("ak5PFNegativeTrackCountingHighEffJetTags");
+process.ak5PFJetAnalyzer.TrackCountingHighPurBJetTags = cms.untracked.string("ak5PFTrackCountingHighPurBJetTags");
+process.ak5PFJetAnalyzer.NegativeTrackCountingHighPur = cms.untracked.string("ak5PFNegativeTrackCountingHighPur");
+process.ak5PFJetAnalyzer.JetProbabilityBJetTags = cms.untracked.string("ak5PFJetProbabilityBJetTags");
+process.ak5PFJetAnalyzer.PositiveOnlyJetProbabilityJetTags = cms.untracked.string("ak5PFPositiveOnlyJetProbabilityJetTags");
+process.ak5PFJetAnalyzer.NegativeOnlyJetProbabilityJetTags = cms.untracked.string("ak5PFNegativeOnlyJetProbabilityJetTags");
+process.ak5PFJetAnalyzer.JetBProbabilityBJetTags = cms.untracked.string("ak5PFJetBProbabilityBJetTags");
+process.ak5PFJetAnalyzer.NegativeOnlyJetBProbabilityJetTags = cms.untracked.string("ak5PFNegativeOnlyJetBProbabilityJetTags");
+process.ak5PFJetAnalyzer.PositiveOnlyJetBProbabilityJetTags = cms.untracked.string("ak5PFPositiveOnlyJetBProbabilityJetTags");
+process.ak5PFJetAnalyzer.SecondaryVertexTagInfos = cms.untracked.string("ak5PFSecondaryVertexTagInfos");
+process.ak5PFJetAnalyzer.SecondaryVertexNegativeTagInfos = cms.untracked.string("ak5PFSecondaryVertexNegativeTagInfos");
+process.ak5PFJetAnalyzer.SimpleSecondaryVertexHighEffBJetTags = cms.untracked.string("ak5PFSimpleSecondaryVertexHighEffBJetTags");
+process.ak5PFJetAnalyzer.SimpleSecondaryVertexNegativeHighEffBJetTags = cms.untracked.string("ak5PFSimpleSecondaryVertexNegativeHighEffBJetTags");
+process.ak5PFJetAnalyzer.SimpleSecondaryVertexHighPurBJetTags = cms.untracked.string("ak5PFSimpleSecondaryVertexHighPurBJetTags");
+process.ak5PFJetAnalyzer.SimpleSecondaryVertexNegativeHighPurBJetTags = cms.untracked.string("ak5PFSimpleSecondaryVertexNegativeHighPurBJetTags");
+process.ak5PFJetAnalyzer.CombinedSecondaryVertexBJetTags = cms.untracked.string("ak5PFCombinedSecondaryVertexBJetTags");
+process.ak5PFJetAnalyzer.CombinedSecondaryVertexNegativeBJetTags = cms.untracked.string("ak5PFCombinedSecondaryVertexNegativeBJetTags");
+process.ak5PFJetAnalyzer.CombinedSecondaryVertexPositiveBJetTags = cms.untracked.string("ak5PFCombinedSecondaryVertexPositiveBJetTags");
+process.ak5PFJetAnalyzer.NegativeSoftMuonByPtBJetTags = cms.untracked.string("ak5PFNegativeSoftMuonByPtBJetTags");
+process.ak5PFJetAnalyzer.PositiveSoftMuonByPtBJetTags = cms.untracked.string("ak5PFPositiveSoftMuonByPtBJetTags");
+
+process.ak3PFJetAnalyzer.pfCandidateLabel = cms.untracked.InputTag("particleFlow")
+process.ak3PFJetAnalyzer.useMatch = cms.untracked.bool(False)
+process.ak3PFJetAnalyzer.doLifeTimeTagging = cms.untracked.bool(True)
+process.ak3PFJetAnalyzer.ImpactParameterTagInfos = cms.untracked.string("ak3PFImpactParameterTagInfos");
+process.ak3PFJetAnalyzer.TrackCountingHighEffBJetTags = cms.untracked.string("ak3PFTrackCountingHighEffBJetTags");
+process.ak3PFJetAnalyzer.NegativeTrackCountingHighEffJetTags = cms.untracked.string("ak3PFNegativeTrackCountingHighEffJetTags");
+process.ak3PFJetAnalyzer.TrackCountingHighPurBJetTags = cms.untracked.string("ak3PFTrackCountingHighPurBJetTags");
+process.ak3PFJetAnalyzer.NegativeTrackCountingHighPur = cms.untracked.string("ak3PFNegativeTrackCountingHighPur");
+process.ak3PFJetAnalyzer.JetProbabilityBJetTags = cms.untracked.string("ak3PFJetProbabilityBJetTags");
+process.ak3PFJetAnalyzer.PositiveOnlyJetProbabilityJetTags = cms.untracked.string("ak3PFPositiveOnlyJetProbabilityJetTags");
+process.ak3PFJetAnalyzer.NegativeOnlyJetProbabilityJetTags = cms.untracked.string("ak3PFNegativeOnlyJetProbabilityJetTags");
+process.ak3PFJetAnalyzer.JetBProbabilityBJetTags = cms.untracked.string("ak3PFJetBProbabilityBJetTags");
+process.ak3PFJetAnalyzer.NegativeOnlyJetBProbabilityJetTags = cms.untracked.string("ak3PFNegativeOnlyJetBProbabilityJetTags");
+process.ak3PFJetAnalyzer.PositiveOnlyJetBProbabilityJetTags = cms.untracked.string("ak3PFPositiveOnlyJetBProbabilityJetTags");
+process.ak3PFJetAnalyzer.SecondaryVertexTagInfos = cms.untracked.string("ak3PFSecondaryVertexTagInfos");
+process.ak3PFJetAnalyzer.SecondaryVertexNegativeTagInfos = cms.untracked.string("ak3PFSecondaryVertexNegativeTagInfos");
+process.ak3PFJetAnalyzer.SimpleSecondaryVertexHighEffBJetTags = cms.untracked.string("ak3PFSimpleSecondaryVertexHighEffBJetTags");
+process.ak3PFJetAnalyzer.SimpleSecondaryVertexNegativeHighEffBJetTags = cms.untracked.string("ak3PFSimpleSecondaryVertexNegativeHighEffBJetTags");
+process.ak3PFJetAnalyzer.SimpleSecondaryVertexHighPurBJetTags = cms.untracked.string("ak3PFSimpleSecondaryVertexHighPurBJetTags");
+process.ak3PFJetAnalyzer.SimpleSecondaryVertexNegativeHighPurBJetTags = cms.untracked.string("ak3PFSimpleSecondaryVertexNegativeHighPurBJetTags");
+process.ak3PFJetAnalyzer.CombinedSecondaryVertexBJetTags = cms.untracked.string("ak3PFCombinedSecondaryVertexBJetTags");
+process.ak3PFJetAnalyzer.CombinedSecondaryVertexNegativeBJetTags = cms.untracked.string("ak3PFCombinedSecondaryVertexNegativeBJetTags");
+process.ak3PFJetAnalyzer.CombinedSecondaryVertexPositiveBJetTags = cms.untracked.string("ak3PFCombinedSecondaryVertexPositiveBJetTags");
+process.ak3PFJetAnalyzer.NegativeSoftMuonByPtBJetTags = cms.untracked.string("ak3PFNegativeSoftMuonByPtBJetTags");
+process.ak3PFJetAnalyzer.PositiveSoftMuonByPtBJetTags = cms.untracked.string("ak3PFPositiveSoftMuonByPtBJetTags");
 
 #process.akPu1PFJetAnalyzer.pfCandidateLabel = cms.untracked.InputTag("particleFlow")
 #process.akPu2PFJetAnalyzer.pfCandidateLabel = cms.untracked.InputTag("particleFlow")
@@ -393,7 +447,7 @@ process.pVertexFilterCutGtight = cms.Path(process.pileupVertexFilterCutGtight)
 process.pVertexFilterCutGplus = cms.Path(process.pileupVertexFilterCutGplus)
 process.pVertexFilterCutE = cms.Path(process.pileupVertexFilterCutE)
 process.pVertexFilterCutEandG = cms.Path(process.pileupVertexFilterCutEandG)
-
+process.pVertexFilterCutGplusUpsPP = cms.Path(process.pileupVertexFilterCutGplusUpsPP)
 
 # Customization
 from CmsHi.JetAnalysis.customise_cfi import *
@@ -466,6 +520,7 @@ process.schedule = cms.Schedule(
     process.pVertexFilterCutGplus,
     process.pVertexFilterCutE,
     process.pVertexFilterCutEandG,
+    process.pVertexFilterCutGplusUpsPP,
     process.hltAna,process.pAna
 #    process.save
     )
